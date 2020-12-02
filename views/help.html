@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Help Page</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            text-align:center;
+        }
+    </style>
+
+    <body>
+        <table style="width:100%">
+            <tr>
+                <th>Method</th>
+                <th>URL</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>GET</td>
+                <td>/</td>
+                <td>This page, which is a help page that shows all available paths</td>
+            </tr>
+            <tr>
+                <td>GET</td>
+                <td>/Users</td>
+                <td >Returns a list of any created users as a JSON array with all properties (UserID, First Name, Last Name, Email Address, Password)</td>
+            </tr>
+            <tr>
+                <td>POST</td>
+                <td>/User</td>
+                <td>Can create a new User with the correct properties. It will also check if the inputted UserID has already been used in the User array where it will throw a 404 Error</td>
+            </tr>
+            <tr>
+                <td>GET</td>
+                <td>/User/{ID}</td>
+                <td>Should return a specific User, based on their UserID, including all of their properties. If this User does not exist, it will throw a 404 Error</td>
+            </tr>
+            <tr>
+                <td>PATCH</td>
+                <td>/User/{ID}</td>
+                <td>Can update the properties (other than UserID) of an inputted User. If the inputted User does not exist, it will throw a 404 Error</td>
+            </tr>
+            <tr>
+                <td>DELETE</td>
+                <td>/User/{ID}</td>
+                <td>Can delete a specified User from the User Array. If the inputted User does not exist, it will throw a 404 Error</td>
+            </tr>
+            <tr>
+                <td>Any</td>
+                <td>Any request that has not been outlined above</td>
+                <td>Will redirect to this page</td>
+            </tr>
+        </table>
+    </body>
+</html>
